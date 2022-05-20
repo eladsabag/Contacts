@@ -1,9 +1,6 @@
 package com.example.contacts.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -12,24 +9,19 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.util.Patterns;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.contacts.R;
 import com.example.contacts.sqlite.DatabaseHelper;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
-
-import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText login_EDT_email, login_EDT_password;
-    private MaterialButton login_BTN_signin, login_BTN_google;
+    private MaterialButton login_BTN_signin;
     private MaterialTextView login_TXT_create, login_TXT_error;
     private boolean validEmail = false , validPassword = false;
 
@@ -141,10 +133,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        login_BTN_google.setOnClickListener(e -> {
-            // TODO Get request to authenticate at google API
-        });
-
         login_TXT_create.setOnClickListener(e -> startActivity(new Intent(LoginActivity.this, RegisterActivity.class)));
     }
 
@@ -165,7 +153,6 @@ public class LoginActivity extends AppCompatActivity {
         login_EDT_email = findViewById(R.id.login_EDT_email);
         login_EDT_password = findViewById(R.id.login_EDT_password);
         login_BTN_signin = findViewById(R.id.login_BTN_signin);
-        login_BTN_google = findViewById(R.id.login_BTN_google);
         login_TXT_create = findViewById(R.id.login_TXT_create);
         login_TXT_error = findViewById(R.id.login_TXT_error);
     }

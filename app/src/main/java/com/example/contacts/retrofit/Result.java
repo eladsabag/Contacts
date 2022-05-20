@@ -1,4 +1,4 @@
-package com.example.contacts.objects;
+package com.example.contacts.retrofit;
 
 import com.google.gson.annotations.SerializedName;
 

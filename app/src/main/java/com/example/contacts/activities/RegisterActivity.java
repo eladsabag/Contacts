@@ -1,9 +1,6 @@
 package com.example.contacts.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -12,24 +9,18 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.util.Patterns;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
-
 import com.example.contacts.R;
 import com.example.contacts.sqlite.DatabaseHelper;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
-
-import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText register_EDT_email, register_EDT_password, register_EDT_mobile;
-    private MaterialButton register_BTN_signup, register_BTN_google;
+    private MaterialButton register_BTN_signup;
     private MaterialTextView register_TXT_error;
     private boolean validEmail = false , validPassword = false, validMobile = false;
 
@@ -173,10 +164,6 @@ public class RegisterActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        register_BTN_google.setOnClickListener(e -> {
-            // TODO Get request to authenticate at google API and save google id on database
-        });
     }
 
     /**
@@ -197,7 +184,6 @@ public class RegisterActivity extends AppCompatActivity {
         register_EDT_password = findViewById(R.id.register_EDT_password);
         register_EDT_mobile = findViewById(R.id.register_EDT_mobile);
         register_BTN_signup = findViewById(R.id.register_BTN_signup);
-        register_BTN_google = findViewById(R.id.register_BTN_google);
         register_TXT_error = findViewById(R.id.register_TXT_error);
     }
 }

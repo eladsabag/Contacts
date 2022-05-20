@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -16,15 +15,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.contacts.R;
-import com.example.contacts.objects.Result;
+import com.example.contacts.retrofit.Result;
 import com.example.contacts.retrofit.RetrofitClient;
 import com.example.contacts.sqlite.DatabaseHelper;
 import com.google.android.material.button.MaterialButton;
-
 import java.util.regex.Pattern;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -183,6 +179,10 @@ public class UpdateActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This function make GET Request to the genderize api and sets the contact gender.
+     * @param firstName - The name that need to be written in the GET Request url.
+     */
     private void setContactGender(String firstName) {
         edit_BTN_gender.setVisibility(View.INVISIBLE);
         Call<Result> call = RetrofitClient.getInstance().getMyApi().getGender("?name="+firstName);

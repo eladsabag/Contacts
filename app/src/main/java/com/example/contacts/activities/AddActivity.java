@@ -27,7 +27,7 @@ public class AddActivity extends AppCompatActivity {
     private EditText add_EDT_firstname, add_EDT_lastname, add_EDT_mobile;
     private MaterialButton add_BTN_add;
     private String email;
-    private boolean validFirstName = false, validLastName = false, validMobile = false;
+    private boolean validMobile = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

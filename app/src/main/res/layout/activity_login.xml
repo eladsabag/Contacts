@@ -70,38 +70,12 @@
             android:layout_marginEnd="15dp"
             android:backgroundTint="#B70A92EC"
             android:text="Sign in"
-            android:paddingStart="50dp"
-            android:paddingEnd="50dp"
             android:textSize="15sp"
             android:fontFamily="sans-serif-black"
-            android:textColor="@color/white"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="Or sign in with"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/login_BTN_google"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:paddingStart="40dp"
-            android:paddingEnd="40dp"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#EF4C40"
-            android:text="Google"
             android:textColor="@color/white"
-            android:fontFamily="sans-serif-black"
-            app:icon="@drawable/ic_google"
-            app:iconGravity="end"
-            app:iconSize="16dp"
-            app:iconTint="@null"/>
+            app:icon="@drawable/ic_signin"
+            app:iconGravity="start"
+            app:iconSize="16dp" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/login_TXT_create"

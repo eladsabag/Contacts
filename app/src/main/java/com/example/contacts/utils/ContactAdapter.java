@@ -9,23 +9,14 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.contacts.R;
 import com.example.contacts.activities.UpdateActivity;
 import com.example.contacts.objects.Contact;
-import com.example.contacts.objects.Result;
-import com.example.contacts.retrofit.RetrofitClient;
 import com.google.android.material.button.MaterialButton;
-
 import java.util.ArrayList;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyViewHolder> {
     private Context context;

@@ -63,6 +63,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    /**
+     * This function add user to the database.
+     * @param email - The user email.
+     * @param password - The user password
+     * @param mobileNumber - The user mobile number.
+     * @return true - if the user added successfully, else - false.
+     */
     public boolean addUser(String email, String password, String mobileNumber) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -82,6 +89,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    /**
+     * This function add contact to the database.
+     * @param firstName - The contact first name.
+     * @param lastName - The contact last name.
+     * @param mobileNumber - The contact mobile number.
+     */
     public void addContact(String firstName, String lastName, String mobileNumber) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -98,6 +111,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context,"Added Successfully!", Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * This function search for user by given email at the database.
+     * @param email - The user email.
+     * @return Cursor with the found user details.
+     */
     public Cursor findUser(String email) {
         String query = "SELECT * " +
                        " FROM " + TABLE_NAME_1 +
@@ -111,6 +129,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    /**
+     * This function read all the contacts data from database that belongs to the user.
+     * @param email - The user email that needed to find the user and his id on database.
+     * @return Cursor with the contacts details
+     */
     public Cursor readAllData(String email) {
         Cursor user = findUser(email);
         user.moveToNext();
@@ -127,6 +150,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    /**
+     * This function edit contact details and updates the database.
+     * @param contact_id - The contact id.
+     * @param firstName - The contact first name.
+     * @param lastName - The contact last name.
+     * @param mobileNumber - The contact mobile number.
+     */
     public void editContactData(String contact_id, String firstName, String lastName, String mobileNumber) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -143,6 +173,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    /**
+     * This function deletes contact from database according to his id.
+     * @param contact_id - The contact id.
+     */
     public void deleteContactData(String contact_id) {
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(TABLE_NAME_2,"contacts_id=?",new String[]{contact_id});
@@ -153,6 +187,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    /**
+     * This function deletes all contacts that attached to the current logged in user.
+     */
     public void deleteAllContactsData() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME_2 + " WHERE " + COLUMN_USERID + " =?",new String[]{getCurrentUserId()});

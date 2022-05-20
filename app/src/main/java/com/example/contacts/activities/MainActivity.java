@@ -1,16 +1,13 @@
 package com.example.contacts.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.contacts.R;
 import com.example.contacts.utils.MSP;
 import com.google.android.material.button.MaterialButton;
-
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,5 +54,12 @@ public class MainActivity extends AppCompatActivity {
      */
     private void findViews() {
         main_BTN_start = findViewById(R.id.main_BTN_start);
+    }
+
+    // -------------------- Life Cycle -------------------- //
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

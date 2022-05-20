@@ -13,6 +13,7 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -42,7 +43,7 @@ public class ContactsActivity extends AppCompatActivity {
     private ContactAdapter contactAdapter;
 
     private String email;
-    private boolean isPauseAtAddActivity = false;
+    private boolean isPauseAtAddActivity = false, isLoggedOut = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,14 +156,15 @@ public class ContactsActivity extends AppCompatActivity {
                 confirmDialog();
             }
         } else if(item.getItemId() == R.id.logout) {
-            resetSaveUserOnSharedPreferences();
+            isLoggedOut = true;
+            resetSavedUserOnSharedPreferences();
             startActivity(new Intent(ContactsActivity.this,MainActivity.class));
             finish();
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private void resetSaveUserOnSharedPreferences() {
+    private void resetSavedUserOnSharedPreferences() {
         MSP.getMe(this).putBooleanToSP("isLoggedIn",false);
         MSP.getMe(this).putStringToSP("email","");
     }
@@ -212,6 +214,8 @@ public class ContactsActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        saveUserToSharedPreferences();
+        if(!isLoggedOut)
+            saveUserToSharedPreferences();
+
     }
 }

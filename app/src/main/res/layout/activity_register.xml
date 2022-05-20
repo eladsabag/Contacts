@@ -85,27 +85,12 @@
             android:layout_marginEnd="15dp"
             android:backgroundTint="#B70A92EC"
             android:text="Sign up"
-            android:paddingStart="85dp"
-            android:paddingEnd="85dp"
             android:textSize="15sp"
             android:fontFamily="sans-serif-black"
-            android:textColor="@color/white"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/register_BTN_google"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:backgroundTint="#EF4C40"
-            android:text="Google Sign Up"
             android:textColor="@color/white"
-            android:fontFamily="sans-serif-black"
-            app:icon="@drawable/ic_google"
-            app:iconGravity="end"
-            app:iconSize="16dp"
-            app:iconTint="@null"/>
+            app:icon="@drawable/ic_signup"
+            app:iconGravity="start"
+            app:iconSize="16dp" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/register_TXT_error"
