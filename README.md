@@ -15,7 +15,7 @@ If you have an account then you need to fill the email and password and login to
 
 if you don't have an account then clicking on 'create your account' will open sign up page:
 
-![Screenshot_20220521-011504_Contacts](https://user-images.githubusercontent.com/68230346/169620070-fd59be9f-b6a5-4ad7-af41-d18875738575.jpg)
+![Screenshot_20220521-012215_Contacts](https://user-images.githubusercontent.com/68230346/169620562-e7f882c5-22dd-4629-86c1-b0aea045485e.jpg)
 
 After filling the required fields then the Contacts activity will open:
 
