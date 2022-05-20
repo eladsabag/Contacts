@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:background="@color/white"
+    tools:context=".activities.RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-thin" />
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_register" />
+
+        <EditText
+            android:id="@+id/register_EDT_email"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="15dp"
+            android:drawableEnd="@drawable/ic_open_mail"
+            android:hint="Email"
+            android:backgroundTint="#B70A92EC"
+            android:inputType="textEmailAddress"
+            android:textColorHint="#ACACAC"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/register_EDT_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:drawableEnd="@drawable/ic_lock"
+            android:hint="Password"
+            android:backgroundTint="#B70A92EC"
+            android:textColor="@color/black"
+            android:inputType="textPassword"
+            android:textColorHint="#ACACAC"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/register_EDT_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:drawableEnd="@drawable/ic_mobile"
+            android:hint="Mobile Number"
+            android:backgroundTint="#B70A92EC"
+            android:textColor="@color/black"
+            android:inputType="phone"
+            android:textColorHint="#ACACAC"
+            android:textSize="15sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/register_BTN_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="#B70A92EC"
+            android:text="Sign up"
+            android:paddingStart="85dp"
+            android:paddingEnd="85dp"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/white"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/register_BTN_google"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="#EF4C40"
+            android:text="Google Sign Up"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-black"
+            app:icon="@drawable/ic_google"
+            app:iconGravity="end"
+            app:iconSize="16dp"
+            app:iconTint="@null"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/register_TXT_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:gravity="center"
+            android:drawableStart="@drawable/ic_error"
+            android:text="User email exists on system. Please try again!"
+            android:textColor="#FF0000"
+            android:textSize="15sp"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+</RelativeLayout>

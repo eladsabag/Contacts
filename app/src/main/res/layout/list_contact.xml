@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/mainLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/fullname"
+            app:layout_constraintTop_toTopOf="@+id/fullname">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/contact_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="14dp"
+                android:backgroundTint="@color/white"
+                android:text="Full Name"
+                app:cornerRadius="30dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:iconGravity="start"
+                app:icon="@drawable/ic_avatar"
+                app:iconSize="35dp"
+                app:iconTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

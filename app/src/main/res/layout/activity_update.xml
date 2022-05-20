@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AddActivity"
+    android:background="@color/white"
+    android:keepScreenOn="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_edit" />
+
+        <EditText
+            android:id="@+id/edit_EDT_firstname"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:hint="First Name"
+            android:backgroundTint="#B70A92EC"
+            android:textColor="@color/black"
+            android:textColorHint="#ACACAC"
+            android:textSize="15sp" />
+
+
+        <EditText
+            android:id="@+id/edit_EDT_lastname"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:hint="Last Name"
+            android:backgroundTint="#B70A92EC"
+            android:textColor="@color/black"
+            android:textColorHint="#ACACAC"
+            android:textSize="15sp" />
+
+
+        <EditText
+            android:id="@+id/edit_EDT_mobile"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:hint="Mobile Number"
+            android:backgroundTint="#B70A92EC"
+            android:textColor="@color/black"
+            android:textColorHint="#ACACAC"
+            android:textSize="15sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/edit_BTN_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/white"
+            android:text="Gender"
+            app:cornerRadius="30dp"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            app:iconGravity="end"
+            app:icon="@drawable/ic_unknown"
+            app:iconSize="30dp"
+            app:iconTint="@null" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/edit_BTN_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:backgroundTint="#B70A92EC"
+            android:text="Edit"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-black" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/edit_BTN_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:backgroundTint="#B7E6F5FF"
+            android:text="Delete"
+            android:textColor="#F80000"
+            android:fontFamily="sans-serif-black" />
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
