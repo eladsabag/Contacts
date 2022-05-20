@@ -19,7 +19,7 @@ if you don't have an account then clicking on 'create your account' will open si
 
 After filling the required fields then the Contacts activity will open:
 
-![Screenshot_20220521-011528_Contacts](https://user-images.githubusercontent.com/68230346/169620082-45ebb0fb-43cc-4b59-8d13-872ac8963859.jpg)
+![Screenshot_20220521-012215_Contacts](https://user-images.githubusercontent.com/68230346/169620562-e7f882c5-22dd-4629-86c1-b0aea045485e.jpg)
 
 Now if you want to add contact you can click on the floating button.
 Filling all the required details and click the add button:
