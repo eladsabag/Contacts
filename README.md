@@ -7,7 +7,7 @@ The main activity display a welcome page:
 
 The button GET STARTED will open new login activity:
 
-![Screenshot_20220521-011454_Contacts](https://user-images.githubusercontent.com/68230346/169620057-748727e3-7027-47ba-92ad-2bdef8c03970.jpg)
+![Screenshot_20220521-112835_Contacts](https://user-images.githubusercontent.com/68230346/169643236-42f6e05b-935e-4ec0-b113-8ada02510c64.jpg)
 
 If you have an account then you need to fill the email and password and login to the contacts activity:
 
