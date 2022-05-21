@@ -7,8 +7,13 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -133,7 +138,22 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        login_TXT_create.setOnClickListener(e -> startActivity(new Intent(LoginActivity.this, RegisterActivity.class)));
+        SpannableString ss = new SpannableString(login_TXT_create.getText());
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(View textView) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            }
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setUnderlineText(false);
+            }
+        };
+        ss.setSpan(clickableSpan, 23, login_TXT_create.getText().length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        login_TXT_create.setText(ss);
+        login_TXT_create.setMovementMethod(LinkMovementMethod.getInstance());
+        login_TXT_create.setHighlightColor(Color.TRANSPARENT);
     }
 
     /**

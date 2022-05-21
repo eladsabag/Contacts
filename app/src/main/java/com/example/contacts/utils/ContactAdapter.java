@@ -22,7 +22,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyViewHo
     private Context context;
     private Activity activity;
     private ArrayList<Contact> allContacts;
-    private String currentContactGender;
 
     private Animation translate_anim;
 
