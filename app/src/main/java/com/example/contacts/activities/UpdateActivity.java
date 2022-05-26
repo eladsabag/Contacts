@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -94,6 +95,7 @@ public class UpdateActivity extends AppCompatActivity {
         builder.create().show();
     }
 
+
     /**
      * This function checks if string matches to mobile number pattern - A valid mobile number has 10-13 numbers and can contain + at start only.
      * @param s - The string that the function check if he matches to the pattern.
@@ -167,7 +169,17 @@ public class UpdateActivity extends AppCompatActivity {
             firstName = getIntent().getExtras().getString("firstName","");
             lastName = getIntent().getExtras().getString("lastName","");
             mobileNumber = getIntent().getExtras().getString("mobileNumber","");
-            setContactGender(firstName);
+
+            if(!isValidName(firstName)) {
+                String s = firstName.split(" ")[0];
+                if(!isValidName(s)) {
+                    edit_BTN_gender.setIconResource(R.drawable.ic_unknown);
+                } else {
+                    setContactGender(firstName);
+                }
+            } else {
+                setContactGender(firstName);
+            }
 
             // Setting intent data
             edit_EDT_firstname.setText(firstName);
@@ -177,6 +189,14 @@ public class UpdateActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this,"No data.", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public static boolean isValidName(String s) {
+        Pattern NAME_PATTERN =
+                Pattern.compile(
+                    "^[A-Za-z]+$"
+                );
+        return !TextUtils.isEmpty(s) && NAME_PATTERN.matcher(s).matches();
     }
 
     /**
@@ -192,22 +212,23 @@ public class UpdateActivity extends AppCompatActivity {
                 Result myGender = response.body();
                 gender = myGender.getGender();
                 edit_BTN_gender.setText(gender);
-                edit_BTN_gender.setEnabled(false);
 
-                if(gender.equalsIgnoreCase("Male"))
+                if(gender == null)
+                    edit_BTN_gender.setIconResource(R.drawable.ic_unknown);
+                else if(gender.equalsIgnoreCase("Male"))
                     edit_BTN_gender.setIconResource(R.drawable.ic_male);
                 else if(gender.equalsIgnoreCase("Female"))
                     edit_BTN_gender.setIconResource(R.drawable.ic_female);
                 else
                     edit_BTN_gender.setIconResource(R.drawable.ic_unknown);
-
-                edit_BTN_gender.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
+                edit_BTN_gender.setIconResource(R.drawable.ic_unknown);
                 Toast.makeText(getApplicationContext(), "An error has occured", Toast.LENGTH_LONG).show();
             }
         });
+        edit_BTN_gender.setVisibility(View.VISIBLE);
     }
 }

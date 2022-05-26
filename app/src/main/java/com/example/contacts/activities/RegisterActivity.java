@@ -160,8 +160,8 @@ public class RegisterActivity extends AppCompatActivity {
                              register_EDT_mobile.getText().toString());
                 Intent intent = new Intent(RegisterActivity.this, ContactsActivity.class);
                 intent.putExtra("email", register_EDT_email.getText().toString());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-                finish();
             }
         });
     }

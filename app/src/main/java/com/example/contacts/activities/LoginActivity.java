@@ -133,8 +133,8 @@ public class LoginActivity extends AppCompatActivity {
             } else {
                 Intent intent = new Intent(LoginActivity.this, ContactsActivity.class);
                 intent.putExtra("email", login_EDT_email.getText().toString());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-                finish();
             }
         });
 

@@ -72,6 +72,7 @@
             app:cornerRadius="30dp"
             android:textAlignment="textStart"
             android:textColor="@color/black"
+            android:enabled="false"
             app:iconGravity="end"
             app:icon="@drawable/ic_unknown"
             app:iconSize="30dp"

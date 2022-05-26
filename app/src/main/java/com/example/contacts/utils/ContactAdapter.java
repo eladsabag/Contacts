@@ -147,6 +147,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyViewHo
                 drawable = R.drawable.ic_z;
                 break;
             default:
+                drawable = R.drawable.ic_unknown;
                 break;
         }
         return drawable;
