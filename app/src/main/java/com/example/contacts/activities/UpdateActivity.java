@@ -191,6 +191,11 @@ public class UpdateActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This function checks if string matches to name pattern - A valid name can contain letters only.
+     * @param s - The string that the function check if he matches to the pattern.
+     * @return true - if the string matches the pattern, else - false.
+     */
     public static boolean isValidName(String s) {
         Pattern NAME_PATTERN =
                 Pattern.compile(
